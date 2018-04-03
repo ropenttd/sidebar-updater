@@ -7,7 +7,7 @@ This is a Python 2.7 project. Make sure you're using Python 2 in your shell befo
 To run the updater, set the following environment variables:
 
 * `OTTD_RUNNER_APPID`: The Application ID of the Application to run against.
-* `OTTD_RUNNER_SECRET`: The Secret of the above Applcation.
+* `OTTD_RUNNER_APPSECRET`: The Secret of the above Applcation.
 * `OTTD_RUNNER_USER`: The username of the account which owns the OAuth Application provided above
 * `OTTD_RUNNER_PASS`: The password of the above account (in plaintext, sorry!)
 
