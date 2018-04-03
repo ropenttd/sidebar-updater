@@ -77,7 +77,7 @@ class Runner:
             s.connect((ip, int(port)))
             s.shutdown(2)
             return True
-        except (socket.error, socket.herror, socket.gaierror):
+        except (socket.error, socket.herror, socket.gaierror, socket.timeout):
             # timeouts, other errors, that kind of thing
             return False
 
