@@ -9,7 +9,7 @@ To run the updater, set the following environment variables:
 * `OTTD_RUNNER_APPID`: The Application ID of the Application to run against.
 * `OTTD_RUNNER_SECRET`: The Secret of the above Applcation.
 * `OTTD_RUNNER_USER`: The username of the account which owns the OAuth Application provided above
-* `OTTD_RUNNER_PASSWORD`: The password of the above account (in plaintext, sorry!)
+* `OTTD_RUNNER_PASS`: The password of the above account (in plaintext, sorry!)
 
 **The application will throw an AssertionError if any of these environment variables is not set.**
 
