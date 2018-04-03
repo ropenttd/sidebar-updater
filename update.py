@@ -31,14 +31,25 @@ class Runner:
             if not self.checkstatus(ip.group(1), ip.group(2)):
                 # we're not up
                 print('{host}:{port} is offline'.format(host=ip.group(1), port=ip.group(2)))
-                return '[' + ip.group(1) + ':' + ip.group(2) + ' - offline](#status-offline)'
+                return '[{host}:{port} - offline](#status-offline)'.format(host=ip.group(1), port=ip.group(2))
             else:
                 # we are up, let's try and pull some data
                 port = int(ip.group(2))
                 client = Client(ip.group(1), port)
-                client.connect(M_UDP)
-                gameinfo = client.getGameInfo()
-                client.disconnect()
+
+                try:
+                    client.connect(M_UDP)
+                    gameinfo = client.getGameInfo()
+                except socket.timeout:
+                    print('{host}:{port} is online, but gameinfo call timed out'.format(
+                        host=ip.group(1),
+                        port=ip.group(2)
+                    )
+                    )
+                    return '[{host}:{port} - online](#status-online)'.format(host=ip.group(1), port=ip.group(2))
+                finally:
+                    client.disconnect()
+
                 if gameinfo is None:
                     # game info isn't available for some reason, but we are up
                     print('{host}:{port} is online, but unable to get gameinfo'.format(
@@ -46,7 +57,8 @@ class Runner:
                         port=ip.group(2)
                         )
                     )
-                    return '[' + ip.group(1) + ':' + ip.group(2) + ' - online](#status-online)'
+                    return '[{host}:{port} - online](#status-online)'.format(host=ip.group(1), port=ip.group(2))
+
                 currentdate = OpenTTDDate(gameinfo.game_date)
                 # revision = gameInfo.server_revision
                 # we're up and have data, let's return a formatted string
