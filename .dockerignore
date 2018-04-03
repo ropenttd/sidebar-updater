@@ -1,0 +1,24 @@
+# Markdown
+*.md
+!README*.md
+
+# Git
+.git
+.gitignore
+
+# CI
+.gitlab-ci.yml
+
+# Docker
+.docker
+
+# Distrib
+env
+**/__pycache__
+**/*.py[cod]
+
+# Logs
+*.log
+
+# PyCharm
+.idea

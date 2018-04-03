@@ -13,5 +13,9 @@ To run the updater, set the following environment variables:
 
 **The application will throw an AssertionError if any of these environment variables is not set.**
 
+You can also run the script as a Docker container; simply build using `docker build`, then pass the above Environment Variables with `docker run -e`.
+
 ## Licensing
-Please see [LICENSE](LICENSE).The original author of this work is unknown, but it is available here with no intention of causing that author distress or financial harm. If you are the original author, please contact us, and we'll be more than happy to add attribution / properly license / remove!
+Please see [LICENSE](LICENSE).
+
+The original author of this work is unknown, but it is available here with no intention of causing that author distress or financial harm. If you are the original author, please contact us, and we'll be more than happy to add attribution / properly license / remove!
