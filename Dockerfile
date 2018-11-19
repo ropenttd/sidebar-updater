@@ -11,4 +11,4 @@ RUN pip install --no-cache -r requirements.txt
 
 COPY . /app
 
-CMD ["python", "/app/update.py"]
+CMD ["sh", "/app/entrypoint.sh"]

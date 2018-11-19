@@ -13,7 +13,13 @@ To run the updater, set the following environment variables:
 
 **The application will throw an AssertionError if any of these environment variables is not set.**
 
+### Docker
+
 You can also run the script as a Docker container; simply build using `docker build`, then pass the above Environment Variables with `docker run -e`.
+
+As an alternative to passing sensitive information via environment variables, `_FILE` may be appended to the previously listed environment variables, causing the initialization script to load the values for those variables from files present in the container. In particular, this can be used to load passwords from Docker secrets stored in /run/secrets/<secret_name> files. For example:
+
+$ docker run -e OTTD_RUNNER_APPID_FILE=/run/secrets/ottd-runner-appid -d <image>
 
 ## Licensing
 Please see [LICENSE](LICENSE).
