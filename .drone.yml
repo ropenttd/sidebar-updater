@@ -6,4 +6,7 @@ steps:
     image: plugins/docker
     settings:
       repo: redditopenttd/sidebar-updater
-      secrets: [ docker_username, docker_password ]
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
