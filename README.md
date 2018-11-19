@@ -1,6 +1,8 @@
 # sidebar-updater
 A super simple script for updating the subreddit's sidebar with current server information.
 
+[![Build Status](https://ci.git.duck.moe/api/badges/ropenttd/sidebar-updater/status.svg)](https://ci.git.duck.moe/ropenttd/sidebar-updater)
+
 ## Howto
 This is a Python 2.7 project. Make sure you're using Python 2 in your shell before proceeding!
 
