@@ -4,6 +4,6 @@ name: default
 steps:
   - name: docker
     image: plugins/docker
-    repo: redditopenttd/sidebar-updater
-    tags: latest
-    secrets: [ docker_username, docker_password ]
+    settings:
+      repo: redditopenttd/sidebar-updater
+      secrets: [ docker_username, docker_password ]
